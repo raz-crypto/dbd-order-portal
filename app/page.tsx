@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Logo } from "@/components/Logo";
 
 type LineItem = {
   productNumber: string;
@@ -201,13 +202,38 @@ export default function Page() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl p-6">
-      <header className="mb-6">
-        <h1 className="text-2xl font-semibold tracking-tight">DBD Order Placement Portal</h1>
-        <p className="mt-1 text-sm text-slate-600">
-          Fill this out to initiate a production order. Submitting emails Zoho Desk with all details + the PO PDF.
-        </p>
-      </header>
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white">
+      <div className="mx-auto max-w-6xl p-6">
+     <header className="mb-6">
+       <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
+        <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-slate-900/5 blur-2xl" />
+       <div className="absolute -left-24 -bottom-24 h-64 w-64 rounded-full bg-amber-400/10 blur-2xl" />
+
+        <div className="relative p-6 md:p-7">
+         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <Logo size={44} />
+
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">
+            Internal
+          </span>
+          <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-900">
+            PO PDF Required
+          </span>
+        </div>
+      </div>
+
+      <h1 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+        Production Order Intake
+      </h1>
+      <p className="mt-2 max-w-3xl text-sm text-slate-600">
+        Fill out the form to initiate a production order. Submitting will email Zoho Desk with all details and the attached PO PDF.
+       </p>
+      </div>
+      </div>
+    </header>
+
 
       <form onSubmit={onSubmit} className="space-y-8">
         <section className="rounded-2xl border border-slate-200 p-5 shadow-sm">
@@ -381,6 +407,7 @@ export default function Page() {
       <footer className="mt-10 text-xs text-slate-500">
         Tip: If you want to prevent random public submissions, set an <code className="rounded bg-slate-100 px-1">ORDER_PORTAL_CODE</code> env var.
       </footer>
+      </div>
     </main>
   );
 }
