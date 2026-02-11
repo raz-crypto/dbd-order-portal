@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Logo } from "../components/Logo";
+import { Logo } from "../components/logo.tsx";
 
 type LineItem = {
   productNumber: string;
