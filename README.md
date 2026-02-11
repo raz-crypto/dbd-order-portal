@@ -26,3 +26,5 @@ Open http://localhost:3000
 
 ## Security note (recommended)
 Without login, the URL is public. To prevent abuse, set `ORDER_PORTAL_CODE` and share the code only internally.
+
+V2
